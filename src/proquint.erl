@@ -40,7 +40,7 @@ decode(Binary) when is_binary(Binary) ->
 
 do_encode(Data) ->
 	<< <<(encode_word(A))/binary, $- >> || << A:16/bits >> <= Data >>.
-do_decode(Data) -> << <<decode_byte(Char)/binary>> || <<Char:8/bits> <= Data>>>.
+do_decode(Data) -> << <<decode_byte(Char)/binary>> || <<Char:8/integer> <= Data>>>.
 
 
 encode_word(<< A:4/integer, B:2/integer, C:4/integer, D:2/integer, E:4/integer >>) ->
@@ -55,3 +55,4 @@ encode_word(<< A:4/integer, B:2/integer, C:4/integer, D:2/integer, E:4/integer >
 encode(N, vowel)     -> ?LOOKUP_VOWEL(N);
 encode(N, consonant) -> ?LOOKUP_CONSONANT(N).
 
+decode_byte($a)-> << 0:2/bits >>.
