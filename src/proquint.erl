@@ -55,4 +55,7 @@ encode_word(<< A:4/integer, B:2/integer, C:4/integer, D:2/integer, E:4/integer >
 encode(N, vowel)     -> ?LOOKUP_VOWEL(N);
 encode(N, consonant) -> ?LOOKUP_CONSONANT(N).
 
-decode_byte($a)-> << 0:2/bits >>.
+decode_byte($a)-> << 0:2/bits >>;
+decode_byte($i)-> << 1:2/bits >>;
+decode_byte($o)-> << 2:2/bits >>;
+decode_byte($u)-> << 3:2/bits >>.
