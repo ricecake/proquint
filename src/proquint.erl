@@ -58,4 +58,5 @@ encode(N, consonant) -> ?LOOKUP_CONSONANT(N).
 decode_byte($a)-> << 0:2/bits >>;
 decode_byte($i)-> << 1:2/bits >>;
 decode_byte($o)-> << 2:2/bits >>;
-decode_byte($u)-> << 3:2/bits >>.
+decode_byte($u)-> << 3:2/bits >>;
+decode_byte($b)-> << 0:4/bits >>;
