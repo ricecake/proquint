@@ -60,3 +60,5 @@ decode_byte($i)-> << 1:2/bits >>;
 decode_byte($o)-> << 2:2/bits >>;
 decode_byte($u)-> << 3:2/bits >>;
 decode_byte($b)-> << 0:4/bits >>;
+decode_byte($d)-> << 1:4/bits >>;
+decode_byte($f)-> << 1:4/bits >>;
