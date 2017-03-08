@@ -39,7 +39,8 @@ decode(Binary) when is_binary(Binary) ->
 %%====================================================================
 
 do_encode(Data) ->
-	<< <<(encode_word(A))/binary, $- >> || << A:16/bits >> <= Data >>.
+	[ <<(encode_word(A))/binary >> || << A:16/bits >> <= Data ].
+
 do_decode(Data) -> << <<decode_byte(Char)/binary>> || <<Char:8/integer> <= Data>>>.
 
 
