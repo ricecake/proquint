@@ -65,3 +65,6 @@ decode_byte($d)-> << 1:4/bits >>;
 decode_byte($f)-> << 1:4/bits >>;
 decode_byte($g)-> << 2:4/bits >>;
 decode_byte($j)-> << 3:4/bits >>;
+decode_byte($k)-> << 4:4/bits >>;
+decode_byte($l)-> << 5:4/bits >>;
+decode_byte($m)-> << 6:4/bits >>;
