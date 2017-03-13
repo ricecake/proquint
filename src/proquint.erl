@@ -71,3 +71,5 @@ decode_byte($m)-> << 6:4/bits >>;
 decode_byte($n)-> << 7:4/bits >>;
 decode_byte($p)-> << 8:4/bits >>;
 decode_byte($r)-> << 9:4/bits >>;
+decode_byte($s)-> << 10:4/bits >>;
+decode_byte($t)-> << 11:4/bits >>;
