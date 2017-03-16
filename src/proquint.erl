@@ -41,7 +41,7 @@ decode(Binary) when is_binary(Binary) ->
 do_encode(Data) ->
 	[ <<(encode_word(A))/binary >> || << A:16/bits >> <= Data ].
 
-do_decode(Data) -> << <<(decode_byte(Char))/bits>> || <<Char:8/integer>> <= Data >>.
+do_decode(Data) -> << <<(decode_byte(Char bor 32))/bits>> || <<Char:8/integer>> <= Data >>.
 
 
 encode_word(<< A:4/integer, B:2/integer, C:4/integer, D:2/integer, E:4/integer >>) ->
