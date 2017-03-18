@@ -3,7 +3,8 @@
 %% API exports
 -export([
 	encode/1,
-	decode/1
+	 encode/2,	
+decode/1
 ]).
 
 -define(CONSONANTS, {$b, $d, $f, $g, $h, $j, $k, $l, $m, $n, $p, $r, $s, $t, $v, $z}).
@@ -23,7 +24,6 @@ encode(Integer) when is_integer(Integer) ->
 	encode(BinaryEncoded);
 encode(Binary) when is_binary(Binary) andalso bit_size(Binary) rem 16 == 0 ->
 	do_encode(Binary).
-
 
 -spec decode(PrettyData :: list()|binary()) -> RawData :: binary().
 
