@@ -1,6 +1,6 @@
 {application, proquint,
  [{description, "Pronouncable Integer Representation"},
-  {vsn, "0.5.0"},
+  {vsn, "1.0.0"},
   {registered, []},
   {applications,
    [kernel,
