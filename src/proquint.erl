@@ -29,7 +29,7 @@ encode(Data, Seperator) when is_binary(Seperator) ->
 	[First|Parts] = encode(Data),
 	(fun
 		Append([], Acc) -> Acc;
-		Append(H|T], Acc) -> Append(T, <<Acc/binary, Seperator/binary, H/binary>>)
+		Append([H|T], Acc) -> Append(T, <<Acc/binary, Seperator/binary, H/binary>>)
 
 	end)(Parts, First).
 
@@ -55,15 +55,15 @@ do_decode(Data) -> << <<(decode_byte(Char bor 32))/bits>> || <<Char:8/integer>> 
 
 encode_word(<< A:4/integer, B:2/integer, C:4/integer, D:2/integer, E:4/integer >>) ->
 	<<
-		(encode(A, consonant)),
-		(encode(B, vowel)),
-		(encode(C, consonant)),
-		(encode(D, vowel)),
-		(encode(E, consonant))
+		(encode_chunk(A, consonant)),
+		(encode_chunk(B, vowel)),
+		(encode_chunk(C, consonant)),
+		(encode_chunk(D, vowel)),
+		(encode_chunk(E, consonant))
 	>>.
 
-encode(N, vowel)     -> ?LOOKUP_VOWEL(N);
-encode(N, consonant) -> ?LOOKUP_CONSONANT(N).
+encode_chunk(N, vowel)     -> ?LOOKUP_VOWEL(N);
+encode_chunk(N, consonant) -> ?LOOKUP_CONSONANT(N).
 
 decode_byte($a)-> << 0:2/integer >>;
 decode_byte($i)-> << 1:2/integer >>;
