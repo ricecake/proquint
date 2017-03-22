@@ -17,13 +17,15 @@
 %% API functions
 %%====================================================================
 
--spec encode(RawData :: integer()|binary()) -> PrettyData :: binary().
+-spec encode(RawData :: integer()|binary()) -> PrettyDataChunks :: list(binary()).
 
 encode(Integer) when is_integer(Integer) ->
 	BinaryEncoded = binary:encode_unsigned(Integer),
 	encode(BinaryEncoded);
 encode(Binary) when is_binary(Binary) andalso bit_size(Binary) rem 16 == 0 ->
 	do_encode(Binary).
+
+-spec encode(RawData :: integer()|binary(), Seperator :: binary()) -> Proquint :: binary().
 
 encode(Data, Seperator) when is_binary(Seperator) ->
 	[First|Parts] = encode(Data),
