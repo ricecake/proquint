@@ -13,6 +13,13 @@
 -define(LOOKUP_VOWEL(N), element(N+1, ?VOWELS)).
 -define(LOOKUP_CONSONANT(N), element(N+1, ?CONSONANTS)).
 
+-ifdef(TEST).
+
+-include_lib("eunit/include/eunit.hrl").
+
+-endif.
+
+
 %%====================================================================
 %% API functions
 %%====================================================================
