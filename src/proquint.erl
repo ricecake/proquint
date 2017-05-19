@@ -93,9 +93,7 @@ decode_byte($p)-> << 10:4/integer >>;
 decode_byte($r)-> << 11:4/integer >>;
 decode_byte($s)-> << 12:4/integer >>;
 decode_byte($t)-> << 13:4/integer >>;
-decode_byte($v)-> << 14:4/integer >>;
-decode_byte($z)-> << 15:4/integer >>;
-decode_byte(_) -> <<>>.
+decode_byte($v)-> << 14:4/integer >>.
 
 
 
