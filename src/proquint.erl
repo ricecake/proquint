@@ -99,4 +99,7 @@ decode_byte($v)-> << 14:4/integer >>.
 
 -ifdef(TEST).
 
+basic_test_() ->
+	{"Basic tests", []}.
+
 -endif.
