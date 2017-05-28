@@ -1,6 +1,5 @@
 -module(proquint).
 
-%% API exports
 -export([
 	encode/1,
 	encode/2,	
@@ -94,7 +93,6 @@ decode_byte($r)-> << 11:4/integer >>;
 decode_byte($s)-> << 12:4/integer >>;
 decode_byte($t)-> << 13:4/integer >>;
 decode_byte($v)-> << 14:4/integer >>.
-
 
 
 -ifdef(TEST).
